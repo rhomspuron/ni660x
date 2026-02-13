@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 
 setup(name="ni660x-rpc",
-    version='0.9.3',
+    version='0.10.0',
     description="RPC server for NI660X counter application",
     author="Alba Synchrotron",
     author_email="controls@cells.es",
