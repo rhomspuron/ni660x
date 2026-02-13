@@ -1,0 +1,36 @@
+schema_version: 1
+context:
+  name: ni660x-rpc
+package:
+  name: ${{ name|lower }}
+  version: 0.11.0
+source:
+   path: ..
+
+build:
+  number: 0
+  noarch: python
+  script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+  python:
+    entry_points:
+      - ni660x-rpc-server=ni660x.rpc.server:main
+requirements:
+  host:
+    - pip
+    - setuptools
+    - python
+  run:
+    - python
+tests:
+  - python:
+      imports:
+        - ni660x
+      pip_check: false
+
+about:
+  summary: RPC server for NI660X counter application
+  license: GPL-3.0-only
+  license_file: LICENSE
+extra:
+  recipe-maintainers:
+    - rhomspuron
