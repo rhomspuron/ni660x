@@ -1,9 +1,10 @@
 from setuptools import setup, find_packages
 
-setup(name="ni660x",
+setup(name="ni660x-rpc",
     version='0.9.3',
     description="RPC server for NI660X counter application",
-    author="Alba sincotron",
+    author="Alba Synchrotron",
+    author_email="controls@cells.es",
     install_requires=["nidaqmx", "click", "pyyaml"],
     entry_points={
       'console_scripts': [
@@ -11,8 +12,6 @@ setup(name="ni660x",
       ]
     },
     packages=find_packages(exclude=['test']),
-    test_suite="test",
     classifiers=["License :: OSI Approved :: GNU General Public License v3 (GPLv3)",],
     license="GNU General Public License v3",
-    python_requires='<=3.10'
 )
