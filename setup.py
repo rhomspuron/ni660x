@@ -5,7 +5,9 @@ setup(name="ni660x-rpc",
     description="RPC server for NI660X counter application",
     author="Alba Synchrotron",
     author_email="controls@cells.es",
-    install_requires=["nidaqmx", "click", "pyyaml"],
+    extras_require={
+          "server": ["nidaqmx", "click", "pyyaml"],
+    },
     entry_points={
       'console_scripts': [
           'ni660x-rpc-server=ni660x.rpc.server:main',
